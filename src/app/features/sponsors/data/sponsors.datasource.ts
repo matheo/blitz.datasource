@@ -18,7 +18,7 @@ export class SponsorsDatasource extends ReactiveDataSource<SponsorsListRequest, 
 
     this.config = {
       debug: true,
-      autoStart: false, // filter BehaviorSubject
+      autoStart: true,
       emptyMsg: () => {
         if (this.args.tier) {
           return 'No sponsors on this Tier';
