@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { docs, docExists, doc } from '../../firebase';
-import { Sponsor } from './sponsors.types';
+import { doc, docExists } from '../../firebase';
+import { Sponsor, SponsorsListRequest } from './sponsors.types';
 
 @Injectable({
   providedIn: 'root'
@@ -22,10 +22,7 @@ export class SponsorsDatabase {
       );
   }
 
-  list() {
-    return this.db
-      .collection<Sponsor>('sponsors')
-      .snapshotChanges()
-      .pipe(docs<Sponsor>());
+  list(args: SponsorsListRequest) {
+    return this.db.collection<Sponsor>('sponsors').snapshotChanges();
   }
 }
