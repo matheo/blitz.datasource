@@ -1,8 +1,9 @@
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { SponsorsListComponent } from './list/list.component';
 import { SponsorsListFilterComponent } from './list/filter/filter.component';
 import { SponsorsListTableComponent } from './list/table/table.component';
 
-export const SponsorsImports = [];
+export const SponsorsImports = [AngularFirestoreModule];
 
 export const SponsorsDeclarations = [SponsorsListFilterComponent, SponsorsListTableComponent];
 
