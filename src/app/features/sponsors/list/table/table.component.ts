@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { MatSort } from '@angular/material';
+import { getterSort } from '@matheo/datasource';
 import { SponsorsDatasource } from '../../data';
 
 @Component({
@@ -10,7 +12,11 @@ export class SponsorsListTableComponent implements OnInit {
   @Input() source: SponsorsDatasource;
   @Input() columns = ['name', 'tier', 'following', 'visibility'];
 
+  @ViewChild('sort', { static: true }) sort: MatSort;
+
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.source.setSort(this.sort, getterSort(this.sort));
+  }
 }

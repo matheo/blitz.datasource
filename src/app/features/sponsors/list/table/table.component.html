@@ -1,7 +1,7 @@
 <mat-datasource [dataSource]="source">
-  <mat-table [dataSource]="source">
+  <mat-table [dataSource]="source" matSort start="desc" #sort="matSort">
     <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
       <mat-cell *matCellDef="let row" fxLayout="row" fxLayoutAlign="start center">
         <span>
           {{ row.name }}
@@ -10,7 +10,7 @@
     </ng-container>
 
     <ng-container matColumnDef="tier">
-      <mat-header-cell *matHeaderCellDef>Tier</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Tier</mat-header-cell>
       <mat-cell *matCellDef="let row" fxLayout="row" fxLayoutAlign="start center">
         <span>
           <strong>${{ row.tier }}</strong> a month
@@ -19,7 +19,7 @@
     </ng-container>
 
     <ng-container matColumnDef="following">
-      <mat-header-cell *matHeaderCellDef>Following</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Following</mat-header-cell>
       <mat-cell *matCellDef="let row" fxLayout="row" fxLayoutAlign="start center">
         <span>
           {{ row.following ? 'Yes' : 'No' }}
@@ -28,7 +28,7 @@
     </ng-container>
 
     <ng-container matColumnDef="visibility">
-      <mat-header-cell *matHeaderCellDef>Visibility</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Visibility</mat-header-cell>
       <mat-cell *matCellDef="let row" fxLayout="row" fxLayoutAlign="start center">
         <span>
           {{ row.visibility }}

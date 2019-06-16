@@ -23,6 +23,17 @@ export class SponsorsDatabase {
   }
 
   list(args: SponsorsListRequest) {
-    return this.db.collection<Sponsor>('sponsors').snapshotChanges();
+    return this.db
+      .collection<Sponsor>('sponsors', ref => {
+        let query: firebase.firestore.CollectionReference | firebase.firestore.Query = ref;
+
+        // sorting
+        if (args.orderBy) {
+          query = query.orderBy(args.orderBy, args.orderDir);
+        }
+
+        return query;
+      })
+      .snapshotChanges();
   }
 }
