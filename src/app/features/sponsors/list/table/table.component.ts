@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { SponsorsDatasource } from '../../data';
 
 @Component({
   selector: 'app-feat-sponsors-list-table',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./table.component.scss']
 })
 export class SponsorsListTableComponent implements OnInit {
+  @Input() source: SponsorsDatasource;
+  @Input() columns = ['name', 'tier', 'following', 'visibility'];
+
   constructor() {}
 
   ngOnInit() {}
