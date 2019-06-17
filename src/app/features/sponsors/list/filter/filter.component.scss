@@ -1,3 +1,19 @@
-mat-form-field {
-  width: 100px;
+app-feat-sponsors-list-filter {
+  > div {
+    padding-left: 20px;
+
+    > mat-form-field {
+      // hacky margin to reduce the mat-form-field paddings
+      margin-bottom: -1.5em;
+      width: 100px;
+
+      .mat-form-field-infix {
+        padding: 0.2375em 0;
+      }
+
+      .mat-select-value {
+        font-size: 90%;
+      }
+    }
+  }
 }
