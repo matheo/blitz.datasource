@@ -1,3 +1,8 @@
-<div>
-  FILTER
+<div fxLayout="row" fxLayoutAlign="end start">
+  <mat-paginator
+    #paginator
+    [length]="source.total"
+    [pageSize]="source.pageSize"
+    [pageSizeOptions]="[2, 4, 6, 8, 10]"
+  ></mat-paginator>
 </div>

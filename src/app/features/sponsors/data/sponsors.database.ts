@@ -32,6 +32,24 @@ export class SponsorsDatabase {
           query = query.orderBy(args.orderBy, args.orderDir);
         }
 
+        // pagination
+        if (args.pageSize || args.limit) {
+          if (args.startAt) {
+            query = query.startAt(...args.startAt);
+          }
+          if (args.startAfter) {
+            query = query.startAfter(...args.startAfter);
+          }
+          if (args.endAt) {
+            query = query.endAt(...args.endAt);
+          }
+          if (args.endBefore) {
+            query = query.endBefore(...args.endBefore);
+          }
+
+          query = query.limit(args.limit || args.pageSize);
+        }
+
         return query;
       })
       .snapshotChanges();

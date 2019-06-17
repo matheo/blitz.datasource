@@ -26,13 +26,18 @@ export class SponsorsDatasource extends ReactiveDataSource<SponsorsListRequest, 
         return 'No matching sponsors';
       }
     };
-    this.pageSize = 10;
+    this.pageSize = 2;
   }
 
   reqArguments(args: SponsorsListRequest) {
     // we cannot sortBy() with an equality filter on the same field
     if (args.orderBy === 'tier') {
       args.tier = undefined;
+    }
+
+    // somehow the paginator is not updating the pageSize initially
+    if (!args.pageSize) {
+      args.pageSize = this.pageSize;
     }
 
     if (args.pageIndex) {
