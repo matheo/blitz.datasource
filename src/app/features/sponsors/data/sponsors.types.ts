@@ -5,7 +5,7 @@ export type SponsorVisibility = 'Public' | 'Private';
 export interface Sponsor {
   id: string;
   name: string;
-  tier: 2;
+  tier: number;
   visibility: SponsorVisibility;
   following: boolean;
 }

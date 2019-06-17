@@ -1,4 +1,10 @@
-<div fxLayout="row" fxLayoutAlign="end start">
+<div [formGroup]="form" fxLayout="row" fxLayoutAlign="space-between start">
+  <mat-form-field>
+    <mat-select formControlName="tier">
+      <mat-option *ngFor="let tier of tiers" [value]="tier.value"> {{ tier.title }} </mat-option>
+    </mat-select>
+  </mat-form-field>
+
   <mat-paginator
     #paginator
     [length]="source.total"

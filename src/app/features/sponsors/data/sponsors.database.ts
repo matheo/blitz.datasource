@@ -27,6 +27,11 @@ export class SponsorsDatabase {
       .collection<Sponsor>('sponsors', ref => {
         let query: firebase.firestore.CollectionReference | firebase.firestore.Query = ref;
 
+        // filtering
+        if (args.tier) {
+          query = query.where('tier', '==', args.tier);
+        }
+
         // sorting
         if (args.orderBy) {
           query = query.orderBy(args.orderBy, args.orderDir);
