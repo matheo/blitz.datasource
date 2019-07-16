@@ -1,8 +1,9 @@
 import { Component, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { SponsorsDatasource } from '../../data';
-import { MatPaginator } from '@angular/material';
-import { getterPaginator, DataSourceItem } from '@matheo/datasource';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatPaginator } from '@angular/material';
+import { DataSourceItem } from '@matheo/datasource';
+import { startWith } from 'rxjs/operators';
+import { SponsorsDatasource } from '../../data';
 
 @Component({
   selector: 'app-feat-sponsors-list-filter',
@@ -34,11 +35,11 @@ export class SponsorsListFilterComponent implements OnInit {
       tier: 0
     });
 
-    this.source.addOptional({
-      stream: this.form.valueChanges,
-      getter: () => this.form.value
+    this.source.addStream({
+      name: 'sponsors.filter',
+      stream: this.form.valueChanges.pipe(startWith(this.form.value))
     });
 
-    this.source.setPaginator(this.paginator, getterPaginator(this.paginator));
+    this.source.setPaginator(this.paginator);
   }
 }
