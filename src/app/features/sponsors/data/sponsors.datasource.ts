@@ -82,7 +82,7 @@ export class SponsorsDatasource extends ReactiveDataSource<SponsorsListRequest, 
     // reverse the order
     result = isPrevious ? result.reverse() : result;
 
-    const total = isPrevious ? this._total : args.pageIndex * args.pageSize + result.length;
+    const total = isPrevious ? this.total : args.pageIndex * args.pageSize + result.length;
 
     // update the pagination controls
     this.currentPage = args.pageIndex;
@@ -92,7 +92,7 @@ export class SponsorsDatasource extends ReactiveDataSource<SponsorsListRequest, 
     if (isPrevious) {
       // restore the order
       this.arguments.orderDir = args.orderDir === 'desc' ? 'asc' : 'desc';
-      return of(this._total);
+      return of(this.total);
     } else if (result.length < args.pageSize) {
       this.last = null;
       return of(total);
