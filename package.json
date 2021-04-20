@@ -25,9 +25,10 @@
     "@angular/router": "^11.2.10",
     "@matheo/datasource": "^11.2.7",
     "firebase": "^8.4.1",
+    "lodash": "latest",
     "rxjs": "6.6.3",
-    "tslib": "^2.0.0",
-    "zone.js": "~0.11.4"
+    "tslib": "^2.2.0",
+    "zone.js": "^0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1102.9",
