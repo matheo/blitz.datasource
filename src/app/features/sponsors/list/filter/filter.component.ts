@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { MatPaginator } from '@angular/material';
+import { MatPaginator } from '@angular/material/paginator';
 import { DataSourceItem } from '@matheo/datasource';
 import { startWith } from 'rxjs/operators';
 import { SponsorsDatasource } from '../../data';

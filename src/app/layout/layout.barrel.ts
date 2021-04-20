@@ -1,5 +1,6 @@
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatListModule, MatToolbarModule } from '@angular/material';
+import { MatListModule } from '@angular/material/list';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { LayoutBodyComponent } from './body/body.component';
 
 export const LayoutImports = [FlexLayoutModule, MatListModule, MatToolbarModule];
