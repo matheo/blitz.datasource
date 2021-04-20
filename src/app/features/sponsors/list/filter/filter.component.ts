@@ -19,9 +19,11 @@ export class SponsorsListFilterComponent implements OnInit {
 
   @ViewChild('paginator', { static: true }) paginator: MatPaginator;
 
-  constructor(private builder: FormBuilder) {}
+  constructor(private builder: FormBuilder) {
+    this.form = this.builder.group({
+      tier: 0
+    });
 
-  ngOnInit() {
     this.tiers = [
       { value: 0, title: 'All Tiers' },
       { value: 1, title: 'Tier $1' },
@@ -30,11 +32,9 @@ export class SponsorsListFilterComponent implements OnInit {
       { value: 4, title: 'Tier $4' },
       { value: 5, title: 'Tier $5' }
     ];
+  }
 
-    this.form = this.builder.group({
-      tier: 0
-    });
-
+  ngOnInit() {
     this.source.addStream({
       name: 'sponsors.filter',
       stream: this.form.valueChanges.pipe(startWith(this.form.value))

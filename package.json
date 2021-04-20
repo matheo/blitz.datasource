@@ -2,6 +2,14 @@
   "name": "angular",
   "version": "0.0.0",
   "private": true,
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
   "dependencies": {
     "@angular/animations": "^11.2.10",
     "@angular/cdk": "^11.2.9",
@@ -17,24 +25,16 @@
     "@angular/router": "^11.2.10",
     "@matheo/datasource": "^11.2.7",
     "firebase": "^8.4.1",
-    "lodash": "^4.17.21",
     "rxjs": "6.6.3",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
-  },
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1102.9",
     "@angular/cli": "11.2.9",
     "@angular/compiler-cli": "~11.2.10",
     "@angular/language-service": "^11.2.10",
+    "@types/lodash": "~4.14.168",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
     "ts-node": "~8.3.0",

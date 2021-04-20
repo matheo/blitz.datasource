@@ -6,7 +6,7 @@ import { AngularFireModule } from '@angular/fire';
   imports: [AngularFirestoreModule]
 })
 export class FirebaseModule {
-  static forRoot(): Array<ModuleWithProviders | ModuleWithProviders[]> {
+  static forRoot(): Array<ModuleWithProviders<AngularFireModule>> {
     return [
       AngularFireModule.initializeApp({
         projectId: 'matdatasource',

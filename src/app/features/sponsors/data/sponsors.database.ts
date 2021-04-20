@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, CollectionReference, Query } from '@angular/fire/firestore';
 import { doc, docExists } from '../../firebase';
 import { Sponsor, SponsorsListRequest } from './sponsors.types';
 
@@ -25,7 +25,7 @@ export class SponsorsDatabase {
   list(args: SponsorsListRequest) {
     return this.db
       .collection<Sponsor>('sponsors', ref => {
-        let query: firebase.firestore.CollectionReference | firebase.firestore.Query = ref;
+        let query: CollectionReference | Query = ref;
 
         // filtering
         if (args.tier) {
