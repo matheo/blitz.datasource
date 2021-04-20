@@ -15,7 +15,7 @@ import { routes } from './app.routing';
     AngularFirestoreModule,
     FirebaseModule.forRoot(),
     LayoutModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
