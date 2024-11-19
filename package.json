@@ -24,7 +24,7 @@
     "@angular/platform-browser-dynamic": "^11.2.10",
     "@angular/router": "^11.2.10",
     "@matheo/datasource": "^11.2.7",
-    "firebase": "^8.4.1",
+    "firebase": "^10.9.0",
     "lodash": "latest",
     "rxjs": "6.6.3",
     "tslib": "^2.2.0",
